@@ -268,12 +268,163 @@ img {
   position: absolute;
   height: 581px;
   width: 528px;
-  top: 50%;
+  top: 35%;
   left: 50%;
+  padding: 40px;
   margin: 0 auto;
-  background-color: #ffffff;
+  background-color: var(--background-main-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
   transform: translate(-50%, -50%);
 }
+
+.modal-title {
+  margin-bottom: 12px;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 23px;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: var(--title-main-color);
+}
+
+.modal-label-text {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+}
+
+.modal-input-field {
+  width: 448px;
+  height: 40px;
+  margin-bottom: 10px;
+  padding-left: 42px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  outline: transparent;
+}
+
+.modal-label:focus-within .icon-form {
+  fill: var(--accent-color);
+}
+
+.modal-label:focus-within .modal-input-field {
+  border-color: var(--accent-color);
+}
+
+.modal-label {
+  position: relative;
+}
+
+/* позиционирование иконок в формах импута */
+.icon-form {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  fill: black;
+  transform: translateY(-50%);
+}
+
+.modal-field-textarea {
+  width: 448px;
+  height: 120px;
+  padding: 12px 16px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  margin-bottom: 20px;
+  resize: none;
+  outline: transparent;
+}
+
+.modal-field-textarea::placeholder {
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+  color: rgba(117, 117, 117, 0.5);
+}
+
+.modal-comment-section:focus-within .modal-field-textarea {
+  border-color: var(--accent-color);
+}
+
+.modal-agreement-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.modal-checkbox-text {
+  line-height: 1.71;
+}
+/* кастомный значок для чекбокса */
+.modal-checkbox-field:checked + .icon-checkboxform {
+  background-color: var(--button-background-color);
+  background-image: url('../images/icon-modal-checked.svg');
+  background-size: contain;
+  background-origin: border-box;
+  border-color: var(--accent-color);
+}
+
+.agreement-colortext {
+  color: var(--accent-color);
+}
+
+/* скрытие оригинального окна чекбокса  */
+.modal-checkbox-field {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+/* кастомное окно чекбокса в форме модалки*/
+.icon-checkboxform {
+  width: 16px;
+  height: 15px;
+  border: 2px solid #212121;
+  border-radius: 4px;
+  margin-right: 7px;
+}
+
+/* кнопка подтверждения в форме модалки */
+.modal-submit-button {
+  min-width: 200px;
+  height: 50px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.88;
+  letter-spacing: 0.06em;
+  color: #ffffff;
+  background-color: var(--button-background-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  border: transparent;
+  cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-submit-button:hover,
+.modal-submit-button:focus {
+  background-color: #188ce8;
+}
+
+.modal-submit-button-section {
+  display: flex;
+  justify-content: center;
+}
+
 /* иконка-крестик на модальном окне */
 .icon-cross-elipse {
   display: flex;
@@ -285,9 +436,17 @@ img {
   width: 30px;
   height: 30px;
   border-radius: 50%;
+  fill: #000000;
   background-color: #fff;
   border: 1px solid rgba(0, 0, 0, 0.1);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+.icon-cross-elipse:hover,
+.icon-cross-elipse:focus {
+  fill: var(--accent-color);
+}
+
 /* ПРЕИМУЩЕСТВА */
 
 /* доп/настройки секции ПРЕИМУЩЕСТВА */
@@ -299,7 +458,6 @@ img {
 }
 
 .container-discription .item {
-  /* display: flex; */
   width: 270px;
   margin-right: 0;
 }
@@ -316,7 +474,6 @@ img {
   margin: -1px;
   border: 0;
   padding: 0;
-
   white-space: nowrap;
   clip-path: inset(100%);
   clip: rect(0 0 0 0);
@@ -577,6 +734,7 @@ img {
 }
 
 /* стили адреса футера */
+
 .container-adress-footer .item {
   padding-left: 0;
   margin-bottom: 9px;
@@ -623,6 +781,7 @@ img {
 .signup {
   margin-left: 93px;
 }
+
 .signup-title {
   margin-bottom: 20px;
   font-weight: 700;
@@ -634,6 +793,7 @@ img {
 .footer-form {
   display: flex;
 }
+
 .footer-email-input {
   display: flex;
   padding-left: 16px;
@@ -645,9 +805,9 @@ img {
   color: rgba(255, 255, 255, 0.6);
   background-color: #2f303a;
   border: 1px solid rgba(255, 255, 255, 0.3);
-  /* filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15)); */
   border-radius: 4px;
 }
+
 .signup-button {
   display: flex;
   min-width: 200px;
