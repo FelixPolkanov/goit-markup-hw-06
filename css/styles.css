@@ -1,6 +1,7 @@
 /* переменные*/
 :root {
   --text-main-color: #757575;
+  --text-secondary-color: #ffffff;
   --title-main-color: #212121;
   --accent-color: #2196f3;
   --background-main-color: #ffffff;
@@ -216,7 +217,7 @@ img {
   margin-right: auto;
   margin-bottom: 30px;
   text-align: center;
-  color: #ffffff;
+  color: var(--text-secondary-color);
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
@@ -228,7 +229,7 @@ img {
   border: none;
   padding: 10px 32px;
   border-radius: 4px;
-  color: #ffffff;
+  color: var(--text-secondary-color);
   background-color: var(--button-background-color);
   font-weight: 700;
   font-size: 16px;
@@ -298,9 +299,8 @@ img {
 }
 
 .modal-input-field {
-  width: 448px;
+  width: 100%;
   height: 40px;
-  margin-bottom: 10px;
   padding-left: 42px;
   padding-top: 12px;
   padding-bottom: 12px;
@@ -319,6 +319,7 @@ img {
 
 .modal-label {
   position: relative;
+  margin-bottom: 10px;
 }
 
 /* позиционирование иконок в формах импута */
@@ -331,12 +332,11 @@ img {
 }
 
 .modal-field-textarea {
-  width: 448px;
+  width: 100%;
   height: 120px;
   padding: 12px 16px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
-  margin-bottom: 20px;
   resize: none;
   outline: transparent;
 }
@@ -347,7 +347,9 @@ img {
   letter-spacing: 0.01em;
   color: rgba(117, 117, 117, 0.5);
 }
-
+.modal-comment-section {
+  margin-bottom: 20px;
+}
 .modal-comment-section:focus-within .modal-field-textarea {
   border-color: var(--accent-color);
 }
@@ -356,12 +358,11 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
+  line-height: 1.71;
   margin-bottom: 30px;
 }
 
-.modal-checkbox-text {
-  line-height: 1.71;
-}
+
 /* кастомный значок для чекбокса */
 .modal-checkbox-field:checked + .icon-checkboxform {
   background-color: var(--button-background-color);
@@ -391,11 +392,14 @@ img {
 
 /* кастомное окно чекбокса в форме модалки*/
 .icon-checkboxform {
+  display: inline-block;
   width: 16px;
   height: 15px;
   border: 2px solid #212121;
   border-radius: 4px;
   margin-right: 7px;
+  transition: border-color 150ms cubic-bezier(0.4, 0, 0.2, 1);, background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);,
+    background-image 250ms cubic-bezier(0.4, 0, 0.2, 1);;
 }
 
 /* кнопка подтверждения в форме модалки */
@@ -406,7 +410,7 @@ img {
   font-size: 16px;
   line-height: 1.88;
   letter-spacing: 0.06em;
-  color: #ffffff;
+  color: var(--text-secondary-color);
   background-color: var(--button-background-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
@@ -517,7 +521,7 @@ img {
   font-weight: 700;
   line-height: 1.14;
   text-transform: uppercase;
-  color: #ffffff;
+  color: var(--text-secondary-color);
 }
 /* стили заголовков секции 3,4,5 */
 .title-our-work,
@@ -681,7 +685,7 @@ img {
 }
 
 .logo-web-footer {
-  color: #ffffff;
+  color: var(--text-secondary-color);
 }
 
 /* контейнеры для футера */
@@ -713,7 +717,7 @@ img {
   font-size: 14px;
   line-height: 1.14;
   text-transform: uppercase;
-  color: #ffffff;
+  color: var(--text-secondary-color);
 }
 
 .icon-elipse-footer {
@@ -750,7 +754,7 @@ img {
   padding: 60px 0;
 }
 .footer-adress {
-  color: #ffffff;
+  color: var(--text-secondary-color);
   font-style: normal;
   font-size: 14px;
   line-height: 1.71;
@@ -787,7 +791,7 @@ img {
   font-weight: 700;
   line-height: 1.14;
   text-transform: uppercase;
-  color: #ffffff;
+  color: var(--text-secondary-color);
 }
 
 .footer-form {
@@ -802,12 +806,14 @@ img {
   font-size: 16px;
   line-height: 1.25;
   align-items: center;
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--text-secondary-color);
   background-color: #2f303a;
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 4px;
 }
-
+.footer-email-input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
 .signup-button {
   display: flex;
   min-width: 200px;
@@ -821,10 +827,11 @@ img {
   font-size: 16px;
   line-height: 1.88px;
   letter-spacing: 0.06em;
-  color: #ffffff;
+  color: var(--text-secondary-color);
   background-color: var(--button-background-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
+  border: none;
 }
 
 .icon-tlgm-send {
@@ -866,7 +873,7 @@ img {
 
 .button-portfolio-menu:hover,
 .button-portfolio-menu:focus {
-  color: #ffffff;
+  color: var(--text-secondary-color);
   background-color: var(--button-background-color);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
@@ -874,7 +881,7 @@ img {
 /* активность кнопки в меню портфолио */
 .active {
   background-color: var(--button-background-color);
-  color: #ffffff;
+  color: var(--text-secondary-color);
 }
 
 /* разметка сетки карточек портфолио */
@@ -923,7 +930,7 @@ img {
   font-size: 18px;
   line-height: 1.56;
   letter-spacing: 0.03em;
-  color: #ffffff;
+  color: var(--text-secondary-color);
 }
 .portfolio-items-set {
   padding: 20px 24px;
